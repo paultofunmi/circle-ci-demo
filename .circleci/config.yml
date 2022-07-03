@@ -38,6 +38,7 @@ jobs:
       - run:
           name: "Print Pipeline Info"
           command: echo "My pipeline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>"
+          command: echo "My pipeline git url is << pipeline.project.git_url >> and my project type << pipeline.project.type >>"
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
