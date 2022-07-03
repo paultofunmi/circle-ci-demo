@@ -47,3 +47,4 @@ workflows:
       - print-hey
       - print-world:
           requires: [print-hey]
+      - print-pipeline-info
