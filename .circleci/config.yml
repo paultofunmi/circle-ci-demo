@@ -37,10 +37,14 @@ jobs:
     steps:
       - run: echo "My pipeline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>"
       - run: echo "My pipeline git url is << pipeline.project.git_url >> and my project type is << pipeline.project.type >>"
-      - run: |
-        echo $my_name # this env set within the project
-      - run: | 
-        echo $MY_ENV_VAR
+      - run:
+          name: "echo an env var that is part of our project"
+          command: |
+            echo $my_name # this env var must be set within the project
+      - run:
+          name: "echo an env var that is part of our project"
+          command: |
+            echo $MY_ENV_VAR # this env var must be set within the project
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
