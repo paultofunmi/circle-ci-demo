@@ -31,6 +31,13 @@ jobs:
       - run:
           name: "Print World"
           command: "echo World!"
+  print-pipeline-info:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - run:
+          name: "Print Pipeline Info"
+          command: echo "My pipeline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>"
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
