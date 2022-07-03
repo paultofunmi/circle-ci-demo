@@ -35,10 +35,8 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run:
-          name: "Print Pipeline Info"
-          command: echo "My pipeline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>"
-          echo "My pipeline git url is << pipeline.project.git_url >> and my project type is << pipeline.project.type >>"
+      - run: echo "My pipeline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>"
+      - run: echo "My pipeline git url is << pipeline.project.git_url >> and my project type is << pipeline.project.type >>"
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
